@@ -5,7 +5,7 @@
 @section('content')
     @include('theme.partials.hero',['title'=> 'Single Blog']) 
 
-  <!--================ Start Blog Post Area =================-->
+    <!--================ Start Blog Post Area =================-->
 <section class="blog-post-area section-margin">
   <div class="container">
     <div class="row">
