@@ -14,26 +14,28 @@
         <div class="single-footer-widget">
             <h6>Newsletter</h6>
             <p>Stay update with our latest</p>
-            <div class="" id="mc_embed_signup">
+            <div >
 
-            <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                method="get" class="form-inline">
-
-                <div class="d-flex flex-row">
-
-                <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
-                    required="" type="email">
-
-
-                <button class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
-                <div style="position: absolute; left: -5000px;">
-                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+            @if (session('status2'))
+                <div class="alert alert-success">
+                    {{ session('status2') }}
                 </div>
+            @endif
 
-                <!-- <div class="col-lg-4 col-md-4">
-                        <button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
-                    </div>  -->
-                </div>
+            <form  action="{{ route('subscriber.store2') }}"
+                method="post" class="form-inline">
+                @csrf
+
+                    <div class="d-flex flex-row">
+                        <input class="form-control" name="mail" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
+                        value="{{ old('mail') }}" ">
+
+                        <button type="submit" class="click-btn btn btn-default">
+                            <span class="lnr lnr-arrow-right"></span></button>
+                    </div>
+                        @error('mail')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                 <div class="info"></div>
             </form>
             </div>
