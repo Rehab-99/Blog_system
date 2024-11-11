@@ -19,11 +19,6 @@ class BlogController extends Controller
         $this->middleware('auth')->only(['create','myBlogs','edit']);
     }
 
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      */
